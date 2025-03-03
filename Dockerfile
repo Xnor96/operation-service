@@ -1,5 +1,5 @@
 # Fase de compilación
-FROM openjdk:17-slim AS build
+FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 
 # Instalar Maven y compilar la aplicación
@@ -8,7 +8,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Imagen final para ejecución
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # Copiar el .jar desde la fase de compilación
