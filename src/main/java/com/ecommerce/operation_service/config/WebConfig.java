@@ -12,9 +12,10 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
             .allowedOrigins(
                 "http://localhost:3000",
-                "https://tu-dominio-vercel.vercel.app"  // Reemplaza con tu dominio real
+                "https://mishkabeta-proyect.vercel.app"  // Reemplaza con tu dominio real
             )
-            .allowedMethods("GET", "POST", "PUT", "DELETE")
-            .allowedHeaders("*");
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .allowCredentials(true);
     }
 }
